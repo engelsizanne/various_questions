@@ -1,0 +1,40 @@
+  /*
+   1- Collection'dan bazi yapilar index desteklemez, bu durumda collection icindeki tum elementleri bize getirebilecek,
+    ve gerektiginde elementleri degistirecek bir tasiyicidir.
+    2-Iterate=ötelemek demektir. Iterator'ı ilk olusturdugumuzda java  Iterator'ı collection'in ilk elementinin
+    yanina koyar. iterator'ı next() ve previous () ile her hareket ettirdigimizde Java iterator 'ı  bir sonraki elemena
+    tasır ve tasirken pass ettigi yani üzerinden gectigi elementi yüklenir.
+
+    3-uzerine aldigi elementi remove() ile silebilir, istersek yazdirabilir veya set() ile degistirebiliriz.
+    4-Java da iki iterator kullaniriz. Iterator class'i sadece 3 method barındırdığı icin cok kullanisli değildir.
+    Sadece ileri doğru gider, remove ile element silebilir veya yazdırabilir.
+    5-ListIterator ise Iterator'in child'i olmasina rağmen daha fazla method barındırır. İleri ve geri hareket edebilir
+    set ile elementleri degistirebiliriz.
+    6-hasNext () ve hasPrevious() methodları yanında element oldugu muddetce bize true dondurur.bu methodları while loop
+    ile kullanarak ileri ve geri olarak tum elementler üzurende gezinebiliriz.
+     */
+
+
+     /*
+
+     Soru 5) (iterator ile index kullanimina ornek)
+     Bir listedeki ilk n elemani iterator kullanarak 5 artirin.
+     Orn :  list : [2,13,56,23,45,14,40]
+     artirilmasi istenen eleman sayisi : 3
+     output: [7,18,61,23,45,14,40]
+
+     */
+             int []arr={2,13,56,23,45,14,40};
+             List<Integer> liste=new ArrayList<>();
+             for (int each:arr) {
+                 liste.add(each);
+             }
+             System.out.println("liste = " + liste);//liste = [2, 13, 56, 23, 45, 14, 40]
+             ListIterator lit1= liste.listIterator();
+             int n=3;
+             for (int i = 0; i <n; i++) {
+                 liste.set(i, liste.get(i)+5);
+                 lit1.next();
+             }
+             System.out.println(liste);
+     */
